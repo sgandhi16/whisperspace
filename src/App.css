@@ -1,0 +1,145 @@
+/* src/App.css - friendly pastel modern UI */
+
+:root{
+  --bg: #fbfafc;
+  --card: #ffffff;
+  --accent: #8a2be2;
+  --muted: #8b8b9a;
+  --glass: rgba(255,255,255,0.7);
+}
+
+/* page */
+body {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,#fcfbff 0%, #fbf8ff 100%);
+  margin: 0;
+  color: #222;
+}
+
+.container {
+  max-width: 920px;
+  margin: 28px auto;
+  padding: 20px;
+}
+
+/* hero */
+.hero {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+h1 { font-size: 32px; margin: 6px 0; color: var(--accent); }
+.subtitle { color: var(--muted); margin-top: 6px; }
+
+/* new post */
+.card-new-post {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 8px 18px rgba(45,35,66,0.06);
+  margin-bottom: 18px;
+}
+
+.card-new-post h3 { margin: 0 0 8px 0; }
+.card-new-post label { display:block; margin-top:10px; color:var(--muted); font-size:13px; }
+.card-new-post select,
+.card-new-post textarea {
+  width:100%;
+  margin-top:6px;
+  padding:10px;
+  border-radius:10px;
+  border:1px solid #e8e6ef;
+  font-size:14px;
+}
+
+/* buttons */
+.btn {
+  background: var(--accent);
+  color: white;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 6px 12px rgba(138,43,226,0.12);
+}
+.btn.ghost, button.ghost {
+  background: transparent;
+  border: 1px solid #e8e6ef;
+  color: #333;
+}
+.btn:hover { transform: translateY(-1px); }
+
+/* success */
+.success { color: #2b7a2b; margin-top:10px; }
+
+/* threads grid */
+.inbox-title { margin-top: 22px; color: #444; }
+.thread-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 14px;
+  margin-top: 12px;
+}
+.thread-card {
+  display:block;
+  background: var(--card);
+  padding: 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 6px 18px rgba(45,35,66,0.04);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.thread-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(45,35,66,0.08); }
+.thread-meta { display:flex; gap:8px; align-items:center; margin-bottom:8px; }
+.thread-card .preview { color:#222; margin:6px 0 10px; min-height:44px; }
+.thread-foot { display:flex; justify-content:space-between; color:var(--muted); font-size:12px; }
+
+/* mood tags */
+.mood-tag { padding:6px 8px; border-radius: 999px; font-weight:700; color:#fff; font-size:12px; }
+.mood-Happy { background: #28a745; }
+.mood-Sad { background: #007bff; }
+.mood-Neutral { background: #6c757d; }
+.mood-Angry { background: #dc3545; }
+
+/* thread page */
+.thread-header { display:flex; justify-content:space-between; align-items:center; margin:12px 0; }
+.thread-header-meta { display:flex; gap:8px; align-items:center; }
+.back-btn { background: transparent; border: none; color:var(--muted); cursor:pointer; margin-bottom:8px; font-size:14px; }
+
+/* chat window */
+.chat-window {
+  background: linear-gradient(180deg,#fff,#fbfbfd);
+  padding: 18px;
+  border-radius: 12px;
+  min-height: 360px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  box-shadow: 0 10px 24px rgba(10,10,20,0.04);
+}
+
+/* bubbles */
+.bubble { max-width: 82%; padding: 10px 12px; border-radius: 12px; position: relative; }
+.bubble .sender-name { font-size:12px; font-weight:700; margin-bottom:6px; opacity:0.85; }
+.bubble .msg-text { font-size:14px; line-height:1.4; }
+.bubble .msg-time { font-size:11px; color:var(--muted); margin-top:8px; }
+
+/* left (user & friend) */
+.bubble.user { background: #d4e6ff; align-self:flex-start; border-top-left-radius:4px; }
+.bubble.friend{ background: #ffe9d6; align-self:flex-start; border-top-left-radius:4px; }
+
+/* right (shanay) */
+.bubble.shanay { background: #e7dbff; align-self:flex-end; border-top-right-radius:4px; }
+
+/* reply area */
+.reply-area { margin-top: 12px; display:flex; flex-direction:column; gap:8px; }
+.reply-area select, .reply-area textarea { width:100%; padding:10px; border-radius:10px; border:1px solid #eee; }
+.reply-area .btn { width:110px; }
+
+/* responsive */
+@media (max-width:640px) {
+  .container { padding: 12px; }
+  .thread-grid { grid-template-columns: 1fr; }
+}
