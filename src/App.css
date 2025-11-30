@@ -128,7 +128,7 @@ h1 { font-size: 32px; margin: 6px 0; color: var(--accent); }
 
 /* left (user & friend) */
 .bubble.user { background: #d4e6ff; align-self:flex-start; border-top-left-radius:4px; }
-.bubble.friend{ background: #ffe9d6; align-self:flex-start; border-top-left-radius:4px; }
+.bubble.riya{ background: #ffe9d6; align-self:flex-start; border-top-left-radius:4px; }
 
 /* right (shanay) */
 .bubble.shanay { background: #e7dbff; align-self:flex-end; border-top-right-radius:4px; }

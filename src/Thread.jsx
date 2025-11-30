@@ -9,7 +9,7 @@ export default function Thread() {
   const [post, setPost] = useState(null)
   const [messages, setMessages] = useState([])
   const [replyText, setReplyText] = useState('')
-  const [sender, setSender] = useState('friend') // allow friend by default
+  const [sender, setSender] = useState('riya') // allow friend by default
   const scrollRef = useRef(null)
 
   const fetchThread = async () => {
@@ -96,11 +96,11 @@ export default function Thread() {
 
       <div className="chat-window">
         {messages.map((m) => {
-          const cls = m.sender === 'shanay' ? 'shanay' : m.sender === 'user' ? 'user' : 'friend'
+          const cls = m.sender === 'shanay' ? 'shanay' : m.sender === 'user' ? 'user' : 'riya'
           return (
             <div key={m.id} className={`bubble ${cls}`}>
               <div className="sender-name">
-                {m.sender === 'shanay' ? 'Shanay' : m.sender === 'user' ? 'User' : 'Friend'}
+                {m.sender === 'shanay' ? 'Shanay' : m.sender === 'user' ? 'User' : 'Riya'}
               </div>
               <div className="msg-text">{m.message_text}</div>
               <div className="msg-time">{new Date(m.created_at).toLocaleString()}</div>
@@ -113,7 +113,7 @@ export default function Thread() {
       <div className="reply-area">
         <label>Reply as:</label>
         <select value={sender} onChange={(e) => setSender(e.target.value)}>
-          <option value="friend">Friend</option>
+          <option value="riya">Riya</option>
           <option value="user">User</option>
           <option value="shanay">Shanay</option>
         </select>
